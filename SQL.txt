@@ -30,3 +30,66 @@ CREATE TABLE test_table (
    date_of_death TEXT DEFAULT 'Not Applicable'
 );
 
+
+
+
+
+SELECT name, skill 
+FROM test_table;
+
+SELECT name AS 'Title'
+FROM test_table;
+
+SELECT DISTINCT skills 
+FROM test_table;
+
+SELECT *
+FROM test_table
+WHERE hero_rating > 8;
+
+SELECT * 
+FROM test_table
+WHERE name LIKE 'Ba_man';
+
+SELECT * 
+FROM test_table 
+WHERE name LIKE '%atma%';
+
+SELECT name
+FROM test_table
+WHERE hero_rating IS NOT NULL;
+
+SELECT *
+FROM test_table
+WHERE name BETWEEN 'A' AND 'J';
+
+SELECT * 
+FROM test_table
+WHERE hero_rating BETWEEN 2 AND 7
+   AND skill = 'flight';
+
+SELECT * 
+FROM test_table
+WHERE hero_rating BETWEEN 2 AND 7
+   OR skill = 'flight';
+
+SELECT *
+FROM test_table
+ORDER BY name;
+
+SELECT *
+FROM test_table
+WHERE heo_rating > 8
+ORDER BY year_started DESC;
+
+SELECT *
+FROM test_table
+LIMIT 10;
+
+SELECT name,
+ CASE
+  WHEN herp_rating > 8 THEN 'Fantastic'
+  WHEN hero_rating > 6 THEN 'Poorly Received'
+  ELSE 'Avoid at All Costs'
+ END AS 'Review'
+FROM test_table;
