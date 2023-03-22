@@ -32,7 +32,7 @@ CREATE TABLE test_table (
 
 
 
-
+REFRESH 2
 
 SELECT name, skill 
 FROM test_table;
@@ -93,3 +93,70 @@ SELECT name,
   ELSE 'Avoid at All Costs'
  END AS 'Review'
 FROM test_table;
+
+
+REFRESH 3
+
+COUNT(): count the number of rows
+SUM(): the sum of the values in a column
+MAX()/MIN(): the largest/smallest value
+AVG(): the average of the values in a column
+ROUND(): round the values in the column
+
+
+SELECT COUNT(*) 
+FROM test_table;
+
+SELECT AVG(downloads)
+FROM test_table;
+
+SELECT ROUND(price, 0)
+FROM test_table;
+
+SELECT name, ROUND(price, 0)
+FROM test_table;
+
+SELECT year,
+   AVG(here_rating)
+FROM test_table
+GROUP BY year
+ORDER BY year;
+
+SELECT price, COUNT(*) 
+FROM test_table
+WHERE downloads > 20000
+GROUP BY skill;
+
+
+SELECT ROUND(imdb_rating),
+   COUNT(name)
+FROM movies
+GROUP BY ROUND(imdb_rating)
+ORDER BY ROUND(imdb_rating);
+=============================
+SELECT ROUND(imdb_rating),
+   COUNT(name)
+FROM movies
+GROUP BY 1
+ORDER BY 1;
+
+1 is the first column selected
+2 is the second column selected
+3 is the third column selected
+
+SELECT category, 
+   price,
+   AVG(downloads)
+FROM fake_apps
+GROUP BY 1, 2;
+
+
+SELECT year,
+   genre,
+   COUNT(name)
+FROM movies
+GROUP BY 1, 2
+HAVING COUNT(name) > 10;
+
+When we want to limit the results of a query based on values of the individual rows, use WHERE.
+When we want to limit the results of a query based on an aggregate property, use HAVING.
