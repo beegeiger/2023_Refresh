@@ -245,3 +245,28 @@ CROSS JOIN lets us combine all rows of one table with all rows of another table.
 UNION stacks one dataset on top of another.
 
 WITH allows us to define one or more temporary tables that can be used in the final query.
+
+
+
+PRACTICE
+
+SQL Sort Ages
+
+SELECT * FROM maintable_5K73J
+WHERE LastName = 'Smith' OR FirstName = 'Robert'
+ORDER BY Age ASC;
+
+
+SQL Basic Sum
+
+SELECT Lastname, SUM(Age) AS 'SumAge' 
+FROM maintable_PZ72Z
+WHERE Lastname = 'Smith';
+
+
+SQL Basic Find
+
+SELECT FirstName, LastName, Age
+FROM maintable_S3LO0
+WHERE Age > 25
+ORDER BY ID;
