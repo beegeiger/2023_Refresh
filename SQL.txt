@@ -160,3 +160,88 @@ HAVING COUNT(name) > 10;
 
 When we want to limit the results of a query based on values of the individual rows, use WHERE.
 When we want to limit the results of a query based on an aggregate property, use HAVING.
+
+
+REFRESH 4
+
+Inner Join:
+
+SELECT orders.order_id,
+   customers.customer_name
+FROM orders
+JOIN customers
+  ON orders.customer_id = customers.customer_id;
+
+Left Join:
+
+SELECT *
+FROM table1
+LEFT JOIN table2
+  ON table1.c2 = table2.c2;
+
+SELECT *
+FROM newspaper
+LEFT JOIN online
+  ON newspaper.id = online.id;
+
+SELECT *
+FROM newspaper
+LEFT JOIN online
+  ON newspaper.id = online.id
+WHERE online.id IS NULL;
+
+
+Cross Join:
+
+SELECT shirts.shirt_color,
+   pants.pants_color
+FROM shirts
+CROSS JOIN pants;
+
+
+
+
+
+
+SELECT *
+FROM table1
+UNION
+SELECT *
+FROM table2;
+
+
+
+
+
+SELECT customer_id,
+   COUNT(subscription_id) AS 'subscriptions'
+FROM orders
+GROUP BY customer_id;
+=======??????
+WITH previous_results AS (
+   SELECT ...
+   ...
+   ...
+   ...
+)
+SELECT *
+FROM previous_results
+JOIN customers
+  ON _____ = _____;
+
+
+
+
+JOIN will combine rows from different tables if the join condition is true.
+
+LEFT JOIN will return every row in the left table, and if the join condition is not met, NULL values are used to fill in the columns from the right table.
+
+Primary key is a column that serves a unique identifier for the rows in the table.
+
+Foreign key is a column that contains the primary key to another table.
+
+CROSS JOIN lets us combine all rows of one table with all rows of another table.
+
+UNION stacks one dataset on top of another.
+
+WITH allows us to define one or more temporary tables that can be used in the final query.
