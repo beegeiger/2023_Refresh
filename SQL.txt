@@ -288,3 +288,14 @@ SELECT MONTHNAME(DateJoined) as Month,
 FROM maintable_IT4DX AS main
 WHERE MONTH(main.DateJoined) != 1
 GROUP BY MONTH(main.DateJoined);
+
+Medium
+SQL Vendor Joins
+SELECT cb_vendorinformation.GroupID, 
+  cb_vendorinformation.CompanyName,
+  COUNT(*) AS Count
+FROM maintable_O6LO3
+INNER JOIN cb_vendorinformation
+  ON maintable_O6LO3.GroupID = cb_vendorinformation.GroupID
+GROUP BY GroupID
+ORDER BY Count, GroupID;
