@@ -270,3 +270,21 @@ SELECT FirstName, LastName, Age
 FROM maintable_S3LO0
 WHERE Age > 25
 ORDER BY ID;
+
+Medium
+SQL User Logins
+
+SELECT MONTHNAME(DateJoined) as Month, 
+  (SELECT COUNT(*) AS month2
+  FROM maintable_IT4DX AS maint2
+  WHERE MONTH(main.DateJoined) = MONTH(maint2.DateJoined) 
+  GROUP BY MONTH(maint2.DateJoined))
+  -
+  (SELECT COUNT(*) AS month1
+  FROM maintable_IT4DX AS maint1
+  WHERE MONTH(main.DateJoined) = MONTH(maint1.DateJoined) + 1
+  GROUP BY MONTH(maint1.DateJoined))
+    as MonthToMonthChange
+FROM maintable_IT4DX AS main
+WHERE MONTH(main.DateJoined) != 1
+GROUP BY MONTH(main.DateJoined);
