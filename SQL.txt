@@ -299,3 +299,10 @@ INNER JOIN cb_vendorinformation
   ON maintable_O6LO3.GroupID = cb_vendorinformation.GroupID
 GROUP BY GroupID
 ORDER BY Count, GroupID;
+
+Medium
+SQL Contains Letter
+SELECT COUNT(*) 
+FROM maintable_WVT84
+WHERE FirstName LIKE "%e%"
+  AND LENGTH(LastName) > 5;
