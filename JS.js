@@ -8,3 +8,19 @@ def ThirdGreatest(strArr):
 
 # keep this function call here 
 print(ThirdGreatest(input()))
+
+Easy
+Hamming Distance
+function HammingDistance(strArr) { 
+  let out = 0
+  var i
+  for (let i=0; i < strArr[0].length; i++) {
+    if (strArr[0][i] != strArr[1][i]) {
+      out += 1
+    }
+  }
+  return(out)
+}
+   
+// keep this function call here 
+console.log(HammingDistance(readline()));
