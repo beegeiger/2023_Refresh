@@ -24,3 +24,30 @@ function HammingDistance(strArr) {
    
 // keep this function call here 
 console.log(HammingDistance(readline()));
+
+Easy
+Number Addition
+function NumberAddition(str) { 
+  let out = 0
+  let tracker = ""
+  var i
+  for (let i = 0; i<str.length; i++) {
+    if (isNaN(str[i]) == false && str[i] != " ") {
+      tracker += str[i]
+    } else {
+      if (tracker.length > 0) {
+        out += parseInt(tracker)
+        tracker = ""
+      }
+    }
+  }
+  if (tracker.length > 0) {
+        out += parseInt(tracker)
+        tracker = ""
+  }
+  return out; 
+
+}
+   
+// keep this function call here 
+console.log(NumberAddition(readline()));
