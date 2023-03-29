@@ -51,3 +51,21 @@ function NumberAddition(str) {
    
 // keep this function call here 
 console.log(NumberAddition(readline()));
+
+Easy 
+Vowel Count
+function VowelCount(str) { 
+  let vowels = "aeiouAEIOU"
+  let counter = 0
+  var i
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      counter += 1
+    }
+  }
+  return counter; 
+
+}
+   
+// keep this function call here 
+console.log(VowelCount(readline()));
