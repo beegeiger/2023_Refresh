@@ -91,3 +91,25 @@ function DashInsert(str) {
    
 // keep this function call here 
 console.log(DashInsert(readline()));
+
+
+Medium
+Binary Converter
+
+function BinaryConverter(str) { 
+  let reverString = str.split("").reverse().join("")
+  let output = 0
+  let counter = 1
+  var i
+  for (let i=0 ; i<str.length; i++) {
+    if (reverString[i] == "1") {
+      output += counter
+    }
+    counter = counter * 2
+  }
+  return output; 
+
+}
+
+// keep this function call here 
+console.log(BinaryConverter(readline()));
