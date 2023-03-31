@@ -69,3 +69,25 @@ function VowelCount(str) {
    
 // keep this function call here 
 console.log(VowelCount(readline()));
+
+Easy
+Dash Insert
+function DashInsert(str) { 
+  let output = ""
+  var i
+  for (let i=0; i<str.length; i++) {
+    if (output.length > 0 ) {
+      if (isNaN(output.charAt(output.length - 1)) == false) {
+        if (parseInt(output.charAt(output.length - 1)) % 2 == 1 && parseInt(str[i]) % 2 == 1) {
+          output += "-"
+        }
+      }
+    }
+    output += str[i]
+  }  
+  return output; 
+
+}
+   
+// keep this function call here 
+console.log(DashInsert(readline()));
