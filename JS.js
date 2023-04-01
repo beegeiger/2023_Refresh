@@ -113,3 +113,20 @@ function BinaryConverter(str) {
 
 // keep this function call here 
 console.log(BinaryConverter(readline()));
+
+Medium
+Fibonacci Checker
+function FibonacciChecker(num) { 
+  let fib = [1,2]
+  var i
+  for (let i = 0; i<50; i++) {
+    fib.push(fib[i]+fib[i+1])
+  }  
+  if (fib.includes(num)){
+    return "yes"
+  }; 
+  return "no"
+}
+   
+// keep this function call here 
+console.log(FibonacciChecker(readline()));
