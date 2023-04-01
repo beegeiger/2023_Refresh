@@ -50,3 +50,22 @@ def test_eval(eval_str, letters, opt):
 
 # keep this function call here 
 print(SimpleSAT(input()))
+
+Hard
+Calculator
+def Calculator(strParam):
+  new_str = ""
+  for ind, x in enumerate(strParam):
+    if ind > 0:
+      if x == "(" and strParam[ind - 1] not in ["+", "-", "/", "*"]:
+        new_str += "*"
+      if x.isdigit() and strParam[ind - 1] == ")":
+        new_str += "*"
+    new_str += x
+  answer = eval(new_str)
+  # code goes here
+  return int(answer)
+
+# keep this function call here 
+print(Calculator(input()))
+
