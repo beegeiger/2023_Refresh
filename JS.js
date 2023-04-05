@@ -130,3 +130,25 @@ function FibonacciChecker(num) {
    
 // keep this function call here 
 console.log(FibonacciChecker(readline()));
+
+
+Medium
+Consecutive
+function Consecutive(arr) { 
+  let values = arr
+  values.sort(function(a, b){return a - b});
+  let counter = 0
+  var i
+  for (let i = 0; i<values.length; i++) {
+    if (i > 0) {
+      if (values[i] - values[i - 1] > 1) {
+        counter += (values[i] - values[i - 1]) - 1
+      }
+    }
+  }  
+  return counter; 
+
+}
+   
+// keep this function call here 
+console.log(Consecutive(readline()));
