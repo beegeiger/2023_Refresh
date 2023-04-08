@@ -71,7 +71,7 @@ print(Calculator(input()))
 
 
 
-Preorder Traversal Try 1
+Preorder Traversal Try 1 - Assumed Binary Heap Implemented without blank spaces
 class Node:
   def __init__(self, name, parent, left=None, right=None):
     self.name = name
@@ -141,7 +141,7 @@ def PreorderTraversal(strArr):
 # keep this function call here 
 print(PreorderTraversal(input()))
 
-Preorder Traversal Try 2
+Preorder Traversal Try 2 - Prvious Cases fixed but new String still has wrong indexes
 class Node:
   def __init__(self, name, parent, left=None, right=None):
     self.name = name
