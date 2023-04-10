@@ -236,3 +236,18 @@ def PrimeMover(num):
 
 # keep this function call here 
 print(PrimeMover(input()))
+
+
+Number Encoding
+def NumberEncoding(strParam):
+  letters = "abcdefghijklmnopqrstuvwxyz"
+  output = ""
+  for n in strParam:
+    if n.isalpha():
+      output += str(letters.index(n) + 1)
+    else:
+      output += n
+  return output
+
+# keep this function call here 
+print(NumberEncoding(input()))
