@@ -217,3 +217,22 @@ def PreorderTraversal(strArr):
 # keep this function call here 
 print(PreorderTraversal(input()))
 
+
+Prime Mover
+def isPrime(num):
+  for i in range(2,num):
+    if num%i == 0:
+      return False
+  return True
+
+def PrimeMover(num):
+  counter = 0
+  current = 2
+  while counter < num:
+    if isPrime(current) == True:
+      counter += 1
+    current += 1
+  return current - 1
+
+# keep this function call here 
+print(PrimeMover(input()))
