@@ -251,3 +251,37 @@ def NumberEncoding(strParam):
 
 # keep this function call here 
 print(NumberEncoding(input()))
+
+Medium
+Plus Minus
+import itertools
+
+def PlusMinus(int_num):
+  num = str(int_num)
+  possible_options = itertools.product("-+", repeat=(len(num) - 1))
+  working_options = []
+  for opt in possible_options:
+    current_eq = ""
+    for n in range(len(num) - 1):
+      current_eq += num[n]
+      current_eq += opt[n]
+    current_eq += num[-1]
+    if eval (current_eq) == 0:
+      formated_option = ""
+      for item in opt:
+        formated_option += item
+      working_options.append(formated_option)
+  if len(working_options) == 0:
+    return "not possible"
+  elif len(working_options) == 1:
+    return working_options[0]
+  else:
+    tracking = []
+    for wo in working_options:
+      tracking.append(wo.count("-"))
+    highest_val = max(tracking)
+    highest_ind = tracking.index(highest_val)
+    return working_options[highest_ind]
+
+# keep this function call here 
+print(PlusMinus(input()))
