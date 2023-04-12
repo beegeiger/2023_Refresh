@@ -289,7 +289,7 @@ print(PlusMinus(input()))
 Medium
 Max SubArray
 def MaxSubarray(arr):
-  highest = 0
+  highest = -99999999
   for ind in range(len(arr)):
     if arr[ind] > highest:
       highest = arr[ind]
