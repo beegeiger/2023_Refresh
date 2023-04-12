@@ -289,12 +289,12 @@ print(PlusMinus(input()))
 Medium
 Max SubArray
 def MaxSubarray(arr):
-  highest = -99999999
+  highest = -999999999
   for ind in range(len(arr)):
     if arr[ind] > highest:
       highest = arr[ind]
     tracker = arr[ind]
-    for ind2 in range(len(arr) - ind):
+    for ind2 in range(len(arr) - ind + 1):
       tracker = sum(arr[ind:ind2 + 1])
       if tracker > highest and len(arr[ind:ind2 + 1]) > 0:
         highest = tracker
