@@ -302,3 +302,24 @@ def MaxSubarray(arr):
 
 # keep this function call here 
 print(MaxSubarray(input()))
+
+Medium
+Run Length (RECURSIVE)
+def RunLength(strParam):
+  first_value = strParam[0]
+  counter = 0
+  output = ""
+  final_index = 0
+  for ind, n in enumerate(strParam):
+    final_index = ind
+    if n == first_value:
+      counter += 1
+      if ind == len(strParam) - 1:
+        return str(counter) + first_value
+    else:
+      output += str(counter) + first_value
+      break
+  return output + RunLength(strParam[final_index:])
+
+# keep this function call here 
+print(RunLength(input()))
