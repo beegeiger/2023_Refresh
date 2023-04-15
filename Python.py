@@ -323,3 +323,25 @@ def RunLength(strParam):
 
 # keep this function call here 
 print(RunLength(input()))
+
+
+Palindrome
+def PalindromicSubstring(strParam):
+  longest = ""
+  for ind, x in enumerate(strParam):
+    tracker = x
+    for ind2, y in enumerate(strParam[ind + 1:]):
+      tracker += y
+      following = strParam[ind + 2]
+      reverse_tracker = tracker[::-1]
+      if following[:len(reverse_tracker)] == reverse_tracker:
+        if len(tracker + followingfollowing[:len(tracker)]) > len(longest):
+          longest = tracker + followingfollowing[:len(tracker)]
+      elif following[:len(reverse_tracker)-1] == reverse_tracker[1:]:
+        if len(tracker + following[:len(reverse_tracker)-1]) > len(longest):
+          
+
+  return strParam
+
+# keep this function call here 
+print(PalindromicSubstring(input()))
