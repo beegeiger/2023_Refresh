@@ -345,3 +345,25 @@ def PalindromicSubstring(strParam):
 
 # keep this function call here 
 print(PalindromicSubstring(input()))
+
+def PalindromicSubstring(strParam):
+  longest = ""
+  for ind, x in enumerate(strParam):
+    tracker = x
+    for ind2, y in enumerate(strParam[ind + 1:]):
+      tracker += y
+      if len(tracker) <= len(strParam) - (ind + ind2):
+        following = strParam[ind + 2:]
+        reverse_tracker = tracker[::-1]
+        if following[:len(reverse_tracker)] == reverse_tracker:
+          if len(tracker + following[:len(tracker)]) > len(longest):
+            longest = tracker + following[:len(tracker)]
+        elif following[:len(reverse_tracker)-1] == reverse_tracker[1:]:
+          if len(tracker + following[:len(reverse_tracker)-1]) > len(longest):
+            longest = tracker + following[:len(reverse_tracker)-1]
+  if longest == "":
+    return "none"
+  return longest
+
+# keep this function call here 
+print(PalindromicSubstring(input()))
