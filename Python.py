@@ -4,6 +4,22 @@ Simple SAT
 import itertools
 import re
 
+
+AB check
+def ABCheck(strParam):
+  for ind, x in enumerate(strParam[:-4]):
+    if x == "a":
+      if strParam[ind + 4] == "b":
+        return "true"
+    elif x == "b":
+      if strParam[ind + 4] == "s":
+        return "true"
+  return "false"
+
+# keep this function call here 
+print(ABCheck(input()))
+
+
 def SimpleSAT(strParam):
   eval_str = ""
   letters = []
