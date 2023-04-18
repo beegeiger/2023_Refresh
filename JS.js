@@ -152,3 +152,15 @@ function Consecutive(arr) {
    
 // keep this function call here 
 console.log(Consecutive(readline()));
+
+
+function arrayDiff(a, b) {
+  let output = []
+  var i
+  for (let i=0; i<a.length; i++) {
+    if (b.includes(a[i]) == false) {
+      output.push(a[i])
+    }
+  }
+  return output
+}
