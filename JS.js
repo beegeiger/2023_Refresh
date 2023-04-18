@@ -164,3 +164,26 @@ function arrayDiff(a, b) {
   }
   return output
 }
+
+function isPangram(string){
+  let alpha = "abcdefghijklmnopqrstuvwxyz"
+  var i
+  for (let i = 0; i<alpha.length; i++) {
+    if (string.includes(alpha[i]) == false) {
+      return false
+    }
+  }
+  return true
+}
+
+function isPangram(stri){
+  let alpha = "abcdefghijklmnopqrstuvwxyz"
+  let string = stri.toLowerCase()
+  var i
+  for (let i = 0; i<alpha.length; i++) {
+    if (string.includes(alpha[i]) == false) {
+      return false
+    }
+  }
+  return true
+}
