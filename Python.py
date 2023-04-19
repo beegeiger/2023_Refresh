@@ -19,6 +19,17 @@ def ABCheck(strParam):
 # keep this function call here 
 print(ABCheck(input()))
 
+Credit Card Mask
+# return masked string
+def maskify(cc):
+    out = ""
+    for ind, x in enumerate(cc):
+        if ind < len(cc) - 4:
+            out += "#"
+        else:
+            out += x
+    return out
+
 
 def SimpleSAT(strParam):
   eval_str = ""
