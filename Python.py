@@ -394,3 +394,30 @@ def PalindromicSubstring(strParam):
 
 # keep this function call here 
 print(PalindromicSubstring(input()))
+
+
+Sum Of Prime Factors
+def sum_of_prime_factors(n):
+  pfs = []
+  for y in range(2,n-1):
+    if n % y == 0:
+      if is_prime(y) == True:
+        pfs.append(y)
+  if n < 0:
+    for y in range(-(n - 1), -2):
+      if n % y == 0:
+        if is_prime(y) == True:
+          pfs.append(y)
+  if pfs == []:
+    return n
+  return sum(pfs)
+
+
+def is_prime(x):
+  if x > 1:
+    for i in range(2, int(x/2)+1):
+      if x % i == 0:
+        return False
+  return True
+
+print(sum_of_prime_factors(91))
