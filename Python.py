@@ -427,3 +427,13 @@ def stutter(word):
   out = ""
   out += word[:2] + "... " + word[:2] + "... " + word + "?"
   return out
+
+
+Codecademy Find the Xth Number
+def getX(x, nums):
+  if len(nums) == 0 or x > len(nums):
+    return 0
+  nums.sort()
+  return nums[x - 1]
+
+getX(2, [5, 10, -3, -3, 7, 9])
