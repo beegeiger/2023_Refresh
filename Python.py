@@ -421,3 +421,9 @@ def is_prime(x):
   return True
 
 print(sum_of_prime_factors(91))
+
+Edabit Stutter Word
+def stutter(word):
+  out = ""
+  out += word[:2] + "... " + word[:2] + "... " + word + "?"
+  return out
