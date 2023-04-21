@@ -437,3 +437,17 @@ def getX(x, nums):
   return nums[x - 1]
 
 getX(2, [5, 10, -3, -3, 7, 9])
+
+HackerRank Leap Year
+def is_leap(year):
+    simplified = False
+    while simplified == False:
+        year -= 400
+        if year < 400:
+            simplified = True
+    if year % 4 == 0 and year not in [100,200,300]:
+        return True
+    return False
+
+
+year = int(input())
