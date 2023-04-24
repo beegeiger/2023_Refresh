@@ -457,3 +457,35 @@ if __name__ == '__main__':
     b = int(input())
     print(a%b)
     print(a/b)
+
+def StringExpression(strParam):
+  written = ["zero","one","two", "three", "four", "five", "six", "seven", "eight", "nine"]
+  out_exp = ""
+  while len(strParam) > 0:
+    if strParam[:3] in written:
+      out_exp += str(written.index(strParam[:3]))
+      strParam = strParam[3:]
+    elif strParam[:4] == "plus":
+      out_exp += "+"
+      strParam = strParam[4:]
+    elif strParam[:4] in written:
+      out_exp += str(written.index(strParam[:4]))
+      strParam = strParam[4:]
+    elif strParam[:5] == "minus":
+      out_exp += "-"
+      strParam = strParam[5:]
+    elif strParam[:5] in written:
+      out_exp += str(written.index(strParam[:5]))
+      strParam = strParam[5:]
+  val = eval(out_exp)
+  out = ""
+  if val < 0:
+    out+="negative"
+    val = val * (-1)
+  for x in str(val):
+    out += written[int(x)]
+
+  return out
+
+# keep this function call here 
+print(StringExpression(input()))
