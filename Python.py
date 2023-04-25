@@ -489,3 +489,25 @@ def StringExpression(strParam):
 
 # keep this function call here 
 print(StringExpression(input()))
+
+Rectange Area
+def RectangleArea(strArr):
+  x = 0
+  y = 0
+  for ind, pair in enumerate(strArr):
+    if ind < 3:
+      for ind2, pair2 in enumerate(strArr[ind + 1:]):
+        xdiff = int(pair[1]) - int(pair2[1])
+        if xdiff < 0:
+          xdiff = xdiff*(-1)
+        if xdiff > x:
+          x = xdiff
+        ydiff = int(pair[3]) - int(pair2[3])
+        if ydiff < 0:
+          ydiff = ydiff*(-1)
+        if ydiff > y:
+          y = ydiff
+  return x*y
+
+# keep this function call here 
+print(RectangleArea(input()))
