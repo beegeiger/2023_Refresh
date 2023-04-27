@@ -511,3 +511,19 @@ def RectangleArea(strArr):
 
 # keep this function call here 
 print(RectangleArea(input()))
+
+Longest Word
+def LongestWord(sen):
+  sim = ""
+  for x in sen:
+    if x.isalpha() or x.isdigit() or x == " ":
+      sim += x
+  words = sim.split(" ")
+  longest = ""
+  for word in words:
+    if len(word) > len(longest):
+      longest = word
+  return longest
+
+# keep this function call here 
+print(LongestWord(input()))
