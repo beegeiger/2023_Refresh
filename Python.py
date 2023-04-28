@@ -527,3 +527,40 @@ def LongestWord(sen):
 
 # keep this function call here 
 print(LongestWord(input()))
+
+
+
+RECURSION
+def BracketMatcher(strParam):
+  checked = False
+  if strParam.count("(") == 0 and strParam.count(")") == 0:
+    return "1"
+  elif strParam.count("(") != strParam.count(")") == 0:
+    return "0"
+  else:
+    removed = remove_bracket(strParam)
+    if removed == "False":
+      return "0"
+    else:
+      return BracketMatcher(removed)
+  return strParam
+
+
+def remove_bracket(str_in):
+  open_ind = -1
+  for ind, x in enumerate(str_in):
+    if x == "(":
+      open_ind = ind
+    elif x == ")":
+      if open_ind == -1:
+        return "False"
+      else:
+        out = str_in[:open_ind] + str_in[open_ind + 1:ind]
+        if ind != len(str_in) - 1:
+          out += str_in[ind + 1:]
+        return out
+  return "False"
+
+
+# keep this function call here 
+print(BracketMatcher(input()))
