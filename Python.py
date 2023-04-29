@@ -564,3 +564,42 @@ def remove_bracket(str_in):
 
 # keep this function call here 
 print(BracketMatcher(input()))
+
+
+SWAP II 
+def SwapII(strParam):
+  str_split = strParam.split(" ")
+  out = ""
+  for word in str_split:
+    num_yet = False
+    non_letter_between = False
+    num_ind = -1
+    last_num_index = -1
+    word_out1 = ""
+    word_out2 = ""
+    for ind, let in enumerate(word):
+      if let.isdigit() and num_yet == False:
+        num_ind = ind
+        num_yet = True
+      elif let.isdigit() and num_yet == True and non_letter_between == False:
+        last_num_index = ind
+      elif let.isalpha() == False and let.isdigit() == False and num_yet == True and last_num_index > -1:
+        non_letter_between = True
+      if let.islower():
+        word_out1 += let.upper()
+      elif let.isupper():
+        word_out1 += let.lower()
+      else:
+        word_out1 += let
+    if num_ind > -1 and last_num_index > -1 and non_letter_between == False:
+      word_out2 = word_out1[:num_ind] + word_out1[last_num_index] + word_out1[num_ind + 1: last_num_index] + word_out1[num_ind]
+      if last_num_index < len(word) - 1:
+        word_out2 += word_out1[last_num_index + 1:]
+    else:
+      word_out2 = word_out1
+    out += word_out2 + " "
+  # code goes here
+  return out[:-1]
+
+# keep this function call here 
+print(SwapII(input()))
