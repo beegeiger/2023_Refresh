@@ -603,3 +603,28 @@ def SwapII(strParam):
 
 # keep this function call here 
 print(SwapII(input()))
+
+Medium
+Formatted Division
+def FormattedDivision(num1,num2):
+  prod = round(num1/num2, 4)
+  prod_str = str(prod)
+  split_prod1 = prod_str.split(".")
+  decimals = split_prod1[-1]
+  for y in range(4-len(split_prod1[-1])):
+    decimals += "0"
+  back_prod = ""
+  tracker = -5
+  prod_str2 = split_prod1[0] + "." + decimals
+  for x in prod_str2[::-1]:
+    tracker +=1
+    if tracker != 3:
+      back_prod += x
+    else:
+      back_prod += x
+      back_prod += ","
+      tracker = 0
+  return back_prod[::-1]
+
+# keep this function call here 
+print(FormattedDivision(input()))
