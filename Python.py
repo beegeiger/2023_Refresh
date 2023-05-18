@@ -628,3 +628,23 @@ def FormattedDivision(num1,num2):
 
 # keep this function call here 
 print(FormattedDivision(input()))
+
+
+Array Addition I
+import itertools
+
+def ArrayAdditionI(arr):
+  arr_sort = list(arr)
+  arr_sort.sort()
+  highest = arr_sort[-1]
+  options = arr_sort[:-1]
+  combs = []
+  for m in range(len(arr)):
+    for x in itertools.combinations(options, m):
+      combs.append(sum(x))
+  if highest in combs:
+    return "true"
+  return "false"
+
+# keep this function call here 
+print(ArrayAdditionI(input()))
