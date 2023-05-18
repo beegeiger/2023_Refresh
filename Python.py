@@ -648,3 +648,22 @@ def ArrayAdditionI(arr):
 
 # keep this function call here 
 print(ArrayAdditionI(input()))
+
+def ThreeFiveMultiples(num):
+  options = []
+  for x in [3,5]:
+    all_checked = False
+    checker = x
+    while checker < 100:
+      if checker not in options:
+        options.append(checker)
+      checker += x
+  options.sort()
+  unders = 0
+  for y in options:
+    if y < num:
+      unders += y
+  return unders
+
+# keep this function call here 
+print(ThreeFiveMultiples(input()))
