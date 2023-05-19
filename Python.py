@@ -667,3 +667,16 @@ def ThreeFiveMultiples(num):
 
 # keep this function call here 
 print(ThreeFiveMultiples(input()))
+
+
+def GCF(arrr):
+  arr = list(arrr)
+  arr.sort()
+  first = int(arr[0])
+  second = int(arr[1])
+  for x in range(int(round(first/2) + 1), 0, -1):
+    if first % x == 0 and second % x == 0:
+      return x
+
+# keep this function call here 
+print(GCF(input()))
