@@ -680,3 +680,25 @@ def GCF(arrr):
 
 # keep this function call here 
 print(GCF(input()))
+
+def PalindromeSwapper(strParam):
+  for ind, n in enumerate(strParam[:-1]):
+    opt = ""
+    if ind == 0:
+      opt = strParam[1] + n + strParam[2:]
+    elif ind == len(strParam) - 2:
+      opt = strParam[:ind] + strParam[-1] + n
+    else:
+      opt = strParam[:ind] + strParam[ind + 1] + n + strParam[ind + 2:]
+    if check_pal(opt) == True:
+      return opt
+  return -1
+
+def check_pal(option):
+  back = option[::-1]
+  if option == back:
+    return True
+  return False
+
+# keep this function call here 
+print(PalindromeSwapper(input()))
