@@ -217,3 +217,24 @@ function OverlappingRanges(arr) {
    
 // keep this function call here 
 console.log(OverlappingRanges(readline()));
+
+Multiplicative Persistance
+function MultiplicativePersistence(num) {
+  var i
+  let loop = 0
+  while (num > 9) {
+    loop += 1
+    let str_num = num.toString();
+    let tracker = parseInt(str_num[0])
+    for (let i = 1; i < str_num.length; i++) {
+      tracker = tracker * parseInt(str_num[i])
+    }
+    num = tracker
+  }
+  // code goes here  
+  return loop; 
+
+}
+   
+// keep this function call here 
+console.log(MultiplicativePersistence(readline()));
