@@ -187,3 +187,33 @@ function isPangram(stri){
   }
   return true
 }
+
+function OverlappingRanges(arr) { 
+  let l1 = []
+  let l2 = []
+  let counter = 0
+
+  for(i=arr[0]; i<=arr[1]; i++){
+    l1.push(i);
+  };
+
+  for(j=arr[2]; j<=arr[3]; j++){
+    l2.push(j);
+  };
+
+
+  for (x in l1) {
+    if (x in l2) {
+      counter +=1;
+    }
+  }
+  if (counter >= arr[4]) {
+    return 'true'
+  } else {
+    return 'false'
+  }
+
+}
+   
+// keep this function call here 
+console.log(OverlappingRanges(readline()));
