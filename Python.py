@@ -705,3 +705,22 @@ def GCF(arrr):
 
 # keep this function call here 
 print(GCF(input()))
+
+def OffLineMinimum(strArr):
+
+  int_list = []
+  output = []
+  for x in strArr:
+    if x.isdigit():
+      int_list.append(int(x))
+    elif x == "E":
+      mini = min(int_list)
+      output.append(str(mini))
+      int_list.remove(mini)
+  out_string = ""
+  for x in output:
+    out_string += (x + ",")
+  return out_string[:-1]
+
+# keep this function call here 
+print OffLineMinimum(raw_input())
